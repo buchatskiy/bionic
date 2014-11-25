@@ -1,6 +1,12 @@
 from django.contrib import admin
 from coursera.models import Group, Student
 
-admin.site.register(Student)
-admin.site.register(Group)
+class ChoiceInline(admin.TabularInline):
+    model = Student
+
+class GroupAdmin(admin.ModelAdmin):
+    fields = ['group_text']
+    inlines = [ChoiceInline]
+
+admin.site.register(Group, GroupAdmin)
 
