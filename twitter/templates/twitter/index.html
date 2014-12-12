@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form action="">
+     <input name="q">
+     <input type="submit">
+</form>
+
+{% for t in twits %}
+    <p> {{t.text}}</p>
+{% endfor %}
+
+</body>
+</html>
